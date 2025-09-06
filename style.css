@@ -1,153 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Vazirmatn:wght@700&family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: linear-gradient(120deg, #fff0f6 0%, #ffe5ec 80%, #ffeeec 100%);
-  font-family: 'Marck Script', 'Dancing Script', cursive, 'Vazirmatn', Tahoma, Arial, sans-serif;
-  overflow-x: hidden;
-  direction: ltr;
-color: #191919;
-}
-
-.bg-decor {
-  position: fixed;
-  inset: 0;
-  background: url('https://svgshare.com/i/12Z8.svg') repeat-y 0 0 / 250px auto,
-              url('https://svgshare.com/i/12ZW.svg') repeat-y right 0 / 200px auto;
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    font-family: 'Vazirmatn', sans-serif;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-  position: relative;
-  z-index: 1;
-  background: rgba(255,255,255,0.73);
-  box-shadow: 0 8px 44px 0 #ffb6d540;
-  border-radius: 44px 22px 66px 18px / 26px 64px 22px 62px;
-  padding: 64px 26px 48px 26px;
-  max-width: 480px;
-  margin: 80px auto 50px auto;
-  text-align: center;
-  backdrop-filter: blur(1.5px);
+    margin-top: 20vh;
 }
 
 h1 {
-  font-family: 'Dancing Script', 'Marck Script', cursive;
-  font-size: 2.6rem;
-  color: #f171ab;
-  margin-bottom: 26px;
-  letter-spacing: 0.5px;
-  line-height: 1.3;
-  color: #181818
+    font-size: 2.5em;
+    animation: pulse 2s infinite;
 }
 
-#wife-name {
-  color: #ff97be;
-  text-shadow: 0 0 24px #fff1f980, 0 2px 0 #ffeef3;
-  font-weight: bold;
-}
-
-.french-heart {
-  font-family: inherit !important;
-  font-size: 1.3em;
-  filter: drop-shadow(0 0 8px #ffeef3d0);
-}
-
-.love-note {
-  display:inline-block;
-  background: linear-gradient(120deg, #fff8fa95 70%, #ffe8e8e6 100%);
-  border-radius: 24px 38px 56px 20px / 25px 46px 33px 44px;
-  box-shadow: 0 4px 22px #f89ca645, 0 0px 2px #fff4;
-  font-family: 'Marck Script', 'Dancing Script', cursive;
-  font-size: 1.32rem;
-  color: #b74881;
-  padding: 34px 22px 28px 22px;
-  margin-bottom: 36px;
-  margin-top: 0;
-  min-width: 220px;
-  min-height: 86px;
-  max-width: 95%;
-  line-height: 2.25rem;
-  text-align: center;
-  transition: box-shadow 0.2s;
-  color: #222 !important
-}
-
-.love-note:hover {
-  box-shadow: 0 4px 30px 0 #e28cba55, 0 8px 22px -8px #ffbbe1c0;
+p {
+    font-size: 1.5em;
 }
 
 button {
-  font-family: 'Vazirmatn', 'Dancing Script', 'Marck Script', cursive, Tahoma, Arial, sans-serif;
-  background: linear-gradient(90deg, #ffc5e6, #f68bbd, #ff92ba);
-  border: none;
-  color: #fff;
-  font-size: 1.04rem;
-  font-weight: 700;
-  padding: 15px 40px;
-  border-radius: 32px 20px 38px 16px / 18px 30px 20px 27px;
-  cursor: pointer;
-  box-shadow: 0 4px 18px #ee4d7e36;
-  margin-top: 18px;
-  letter-spacing: 1px;
-  transition: background 0.18s, transform 0.13s;
+    margin-top: 20px;
+    background: white;
+    color: #ff4d6d;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-  background: linear-gradient(90deg, #ff92ba 40%, #f68bbd 100%);
-  transform: scale(1.06);
+    transform: scale(1.1);
 }
 
-.hearts {
-  position: absolute;
-  left: 0; right: 0; top: -30px;
-  pointer-events: none;
-  height: 0;
+.hidden {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.5em;
 }
 
-.heart {
-  position: absolute;
-  width: 37px;
-  height: 37px;
-  background: #e676ad;
-  opacity: 0.72;
-  left: 50%;
-  top: 7px;
-  transform: translateX(-50%) scale(1);
-  animation: floatHeart 3.9s linear infinite;
-}
-
-.heart::before, .heart::after {
-  content: '';
-  position: absolute;
-  background: inherit;
-  width: 37px;
-  height: 37px;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -17px;
-  left: 0;
-}
-.heart::after {
-  left: 17px;
-  top: 0;
-}
-
-@keyframes floatHeart {
-  0% {
-    transform: translateX(-50%) scale(0.7) rotate(-21deg);
-    opacity: 0.75;
-  }
-  65% {
-    opacity: 0.91;
-  }
-  100% {
-    transform: translateX(calc(-50% + var(--x, 0px)), -250px) scale(1.09) rotate(17deg);
-    opacity: 0.05;
-  }
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
