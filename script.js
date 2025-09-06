@@ -1,4 +1,20 @@
-// افکت قلب‌ها در بخش اول
+// موزیک پس‌زمینه
+const musicBtn = document.getElementById('music-btn');
+const bgMusic = document.getElementById('bg-music');
+let isPlaying = false;
+
+musicBtn.addEventListener('click', () => {
+    if (isPlaying) {
+        bgMusic.pause();
+        musicBtn.textContent = "🎵 پخش موزیک";
+    } else {
+        bgMusic.play();
+        musicBtn.textContent = "⏸ توقف موزیک";
+    }
+    isPlaying = !isPlaying;
+});
+
+// افکت قلب‌ها
 const canvas = document.getElementById('heartsCanvas');
 const ctx = canvas.getContext('2d');
 let hearts = [];
@@ -49,12 +65,11 @@ function updateHearts() {
 }
 updateHearts();
 
-// اسکرول انیمیشن برای بخش‌ها
+// نمایش انیمیشن در اسکرول
 const fadeElems = document.querySelectorAll('.fade-in');
 window.addEventListener('scroll', () => {
     fadeElems.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
             el.classList.add('show');
         }
     });
