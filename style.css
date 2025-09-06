@@ -1,87 +1,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
-
 body {
-font-family: 'Vazirmatn', sans-serif;
-color: white;
+    font-family: 'Vazirmatn', sans-serif;
+    color: white;
 }
 
+/* دکمه موزیک */
+#music-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* سکشن‌ها */
 section {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 50px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+}
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 /* بخش اول */
 .hero {
-position: relative;
-background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-text-align: center;
-overflow: hidden;
-}
-.hero h1 {
-font-size: 3em;
-z-index: 2;
-position: relative;
-}
-.hero p {
-font-size: 1.5em;
-z-index: 2;
-position: relative;
+    background-image: url('https://source.unsplash.com/1600x900/?romantic,love');
+    position: relative;
+    overflow: hidden;
 }
 .overlay {
-position: absolute;
-top: 0; left: 0;
-width: 100%; height: 100%;
-background: rgba(0,0,0,0.2);
-z-index: 1;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
 }
-canvas {
-position: absolute;
-top: 0; left: 0;
+.hero h1, .hero p {
+    z-index: 2;
+    position: relative;
 }
 
-/* بخش دوم */
+/* بخش درباره */
 .about {
-background: #ff6f91;
-text-align: center;
+    background: #ff6f91;
 }
 .about img {
-margin-top: 20px;
-border-radius: 15px;
-box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
 }
 
-/* بخش سوم */
+/* گالری */
+.gallery {
+    background: #00b894;
+}
+.gallery .images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+.gallery .images img {
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+.gallery .images img:hover {
+    transform: scale(1.1);
+}
+
+/* تایم‌لاین */
 .timeline {
-background: #c56cf0;
-text-align: center;
+    background: #6c5ce7;
 }
 .timeline .event {
-margin: 20px 0;
-opa0;
-transform: translateY(50px);
-transition: 1s;
+    margin: 15px 0;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.timeline .event:hover {
+    background: rgba(255,255,255,0.3);
 }
 
-/* fade-in فعال */
-.fade-in.show {
-opacity: 1;
-transform: translateY(0);
-}
-
-/* بخش پایانی */
+/* پایانی */
 .final {
-background: linear-gradient(135
+    position: relative;
+    background: black;
+}
+.stars {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 3px 3px;
+    z-index: 0;
+}
+.final h2, .final p {
+    position: relative;
+    z-index: 1;
+}
+
+/* انیمیشن fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
