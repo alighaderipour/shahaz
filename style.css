@@ -1,134 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Vazirmatn',sans-serif;color:#fff;overflow-x:hidden;}
+section{position:relative;min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-    scroll-behavior: smooth;
-}
-body {
-    font-family: 'Vazirmatn', sans-serif;
-    color: white;
+video#bg-video{
+    position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;
 }
 
-/* دکمه موزیک */
-#music-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 999;
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
+.overlay{
+    position:absolute;top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.5);z-index:0;
 }
 
-/* سکشن‌ها */
-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    text-align: center;
-}
-.parallax {
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+.hero-content{
+    position:relative;z-index:2;max-width:80%;
 }
 
-/* بخش اول */
-.hero {
-    background-image: url('https://quotf.com/wp-content/uploads/2018/12/I-Love-You-Messages-For-Wife.jpg');
-    position: relative;
-    overflow: hidden;
+.about, .gallery{
+    background-size:cover;background-position:center;
 }
-.overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.3);
-    z-index: 1;
-}
-.hero h1, .hero p {
-    z-index: 2;
-    position: relative;
-}
+.content{position:relative;z-index:2;padding:20px;background:rgba(0,0,0,0.4);border-radius:10px;}
+.gallery-grid{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;}
+.gallery-grid img{width:300px;border-radius:10px;cursor:pointer;transition:transform 0.3s;}
+.gallery-grid img:hover{transform:scale(1.05);}
 
-/* بخش درباره */
-.about {
-    background: #ff6f91;
-}
-.about img {
-    margin-top: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.5);
-}
+.final{background:black;}
+.final-content{position:absolute;z-index:2;}
+canvas#starsCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
 
-/* گالری */
-.gallery {
-    background: #00b894;
-}
-.gallery .images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-.gallery .images img {
-    border-radius: 10px;
-    transition: transform 0.5s;
-}
-.gallery .images img:hover {
-    transform: scale(1.1);
-}
-
-/* تایم‌لاین */
-.timeline {
-    background: #6c5ce7;
-}
-.timeline .event {
-    margin: 15px 0;
-    background: rgba(255,255,255,0.1);
-    padding: 10px 15px;
-    border-radius: 10px;
-    transition: 0.5s;
-}
-.timeline .event:hover {
-    background: rgba(255,255,255,0.3);
-}
-
-/* پایانی */
-.final {
-    position: relative;
-    background: black;
-}
-.stars {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-image: radial-gradient(white 1px, transparent 1px);
-    background-size: 3px 3px;
-    z-index: 0;
-}
-.final h2, .final p {
-    position: relative;
-    z-index: 1;
-}
-
-/* انیمیشن fade-in */
-.fade-in {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 1s;
-}
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+.fade-in{opacity:0;transform:translateY(50px);transition:1s;}
+.fade-in.show{opacity:1;transform:translateY(0);}
