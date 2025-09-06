@@ -3,53 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌸 فاطمه عشق من 🌸</title>
+    <title>چشمان تو، قصه‌ی عاشقانه من</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="bg-music" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" loop></audio>
-    <button id="music-btn">🎵 پخش موزیک</button>
-
-    <!-- بخش اول -->
-    <section class="hero parallax">
+  
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop id="bg-video">
+            <source src="video.mp4" type="video/mp4">
+        </video>
         <div class="overlay"></div>
-        <h1>فاطمه جان 🌹</h1>
-        <p>بودنت زیباترین شعر دنیاست...</p>
         <canvas id="heartsCanvas"></canvas>
-    </section>
-
-    <!-- بخش دوم -->
-    <section class="about fade-in">
-        <h2>وقتی تویی، همه چیز کامل است</h2>
-        <p>هر روز با لبخند تو آغاز، و با صدای تو آرام می‌شود...</p>
-        <img src="https://source.unsplash.com/400x300/?love,romance" alt="Love">
-    </section>
-
-    <!-- بخش سوم -->
-    <section class="gallery fade-in">
-        <h2>لحظه‌های ما ❤️</h2>
-        <div class="images">
-            <img src="https://source.unsplash.com/300x300/?couple,1" alt="">
-            <img src="https://source.unsplash.com/300x300/?couple,2" alt="">
-            <img src="https://source.unsplash.com/300x300/?couple,3" alt="">
-            <img src="https://source.unsplash.com/300x300/?couple,4" alt="">
+        <div class="hero-content">
+            <h1>فاطمه ❤️ عشق همیشگی من</h1>
+            <p>تو آغاز و پایان تمام فصل‌های منی...</p>
         </div>
     </section>
 
-    <!-- بخش چهارم -->
-    <section class="timeline fade-in">
-        <h2>داستان ما</h2>
-        <div class="event">💌 اولین سلام</div>
-        <div class="event">☕ اولین دیدار</div>
-        <div class="event">🎶 آهنگ مورد علاقه مشترک</div>
-        <div class="event">💍 تصمیم برای همیشه</div>
+    <!-- About Section -->
+    <section class="about fade-in" style="background-image: url('https://images.pexels.com/photos/1024975/pexels-photo-1024975.jpeg');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>با تو، زندگی رنگ می‌گیرد</h2>
+            <p>وقتی هستی، حتی سکوت هم آواز می‌خواند...</p>
+        </div>
     </section>
 
-    <!-- بخش پایانی -->
-    <section class="final parallax">
-        <div class="stars"></div>
-        <h2>تا همیشه...</h2>
-        <p>هر جا که باشی، آنجا خانه قلب من است 💖</p>
+    <!-- Gallery Section -->
+    <section class="gallery fade-in" style="background-image: url('https://images.pexels.com/photos/13949178/pexels-photo-13949178.jpeg');">
+        <div class="overlay"></div>
+        <h2>لحظه‌های ما</h2>
+        <div class="gallery-grid">
+            <img src="https://images.pexels.com/photos/3656334/pexels-photo-3656334.jpeg" alt="">
+            <img src="https://images.pexels.com/photos/3693900/pexels-photo-3693900.jpeg" alt="">
+            <img src="https://images.pexels.com/photos/3693901/pexels-photo-3693901.jpeg" alt="">
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="final">
+        <canvas id="starsCanvas"></canvas>
+        <div class="final-content">
+            <h2 id="typedText"></h2>
+        </div>
     </section>
 
     <script src="script.js"></script>
