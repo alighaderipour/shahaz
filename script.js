@@ -1,9 +1,4 @@
-document.getElementById("loveBtn").addEventListener("click", function() {
-    const msg = document.getElementById("message");
-    msg.classList.toggle("hidden");
-});
-
-// ❤️ افکت قلب‌ها
+// افکت قلب‌ها در بخش اول
 const canvas = document.getElementById('heartsCanvas');
 const ctx = canvas.getContext('2d');
 let hearts = [];
@@ -40,11 +35,9 @@ function drawHeart(x, y, size, alpha) {
 
 function updateHearts() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (Math.random() < 0.1) {
-        hearts.push(createHeart());
-    }
+    if (Math.random() < 0.1) hearts.push(createHeart());
     for (let i = 0; i < hearts.length; i++) {
-        const h = hearts[i];
+        let h = hearts[i];
         h.y -= h.speed;
         drawHeart(h.x, h.y, h.size, h.alpha);
         if (h.y < -20) {
@@ -54,5 +47,15 @@ function updateHearts() {
     }
     requestAnimationFrame(updateHearts);
 }
-
 updateHearts();
+
+// اسکرول انیمیشن برای بخش‌ها
+const fadeElems = document.querySelectorAll('.fade-in');
+window.addEventListener('scroll', () => {
+    fadeElems.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
+    });
+});
